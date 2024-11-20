@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "HID-Project.h"
+#include <Keyboard.h>
 #include "bhop.h"
 
 bool g_isDisabled = false;
@@ -17,26 +17,27 @@ void onKeyPress() {
 }
 
 void setup() {
+  if (bhop::setup()) {
+    Keyboard.begin();
+    return;
+  }
+  
   Serial.begin(9600);
   delay(1000);
 
-  if (!bhop::setup()) {
-    if (bhop::hasError()) {
-      Serial.println("Error: can't initialize, wiring issue?");
-    } else {
-      Serial.println("== Recovery mode ==");
-    }
-
-    return;
+  if (bhop::hasError()) {
+    Serial.println(F("Error: can't initialize, wiring issue?"));
+  } else {
+    Serial.println(F("== Recovery mode =="));
   }
-
-  // Keyboard.begin();
 }
 
 void loop() {
   if (bhop::tick()) {
     bhop::setLedStatus(HIGH);
-    delay(50);
+    Keyboard.press(' ');
+    delay(BHOP_KEYPRESS_DURATION_MS);
+    Keyboard.release(' ');
     bhop::setLedStatus(LOW);
   }
 }

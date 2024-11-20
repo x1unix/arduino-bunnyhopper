@@ -39,6 +39,7 @@ bool setup() {
     return false;
   }
 
+  setLedStatus(LOW);
   g_boardStatus = BoardState::Enabled;
   return true;
 }

@@ -20,6 +20,10 @@
 // Pin to indicate bunny hop keypress event through LED (optional).
 #define PIN_STATUS_LED PIN7
 
+// Controls how long space button should remain pressed.
+// Ideal value is be between 5-20 milliseconds.
+#define BHOP_KEYPRESS_DURATION_MS 15
+
 // Pin for a potentiometer to control jump key press interval.
 // Optional.
 #define PIN_BHOP_INTERVAL_CTRL A0
