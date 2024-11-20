@@ -2,20 +2,6 @@
 #include <Keyboard.h>
 #include "bhop.h"
 
-bool g_isDisabled = false;
-bool g_val = false;
-
-
-
-volatile int g_delta = 0;
-int g_prevDelta = 0;
-int g_prevMillis = 0;
-
-void onKeyPress() {
-  g_prevDelta = g_delta;
-  g_delta++;
-}
-
 void setup() {
   if (bhop::setup()) {
     Keyboard.begin();
