@@ -13,10 +13,6 @@ bool ticked() {
 
   int delay = getInterval();
   int delta = millis() - g_previousMillis;
-  // Serial.print("delay:");
-  // Serial.print(delay);
-  // Serial.print(" delta:");
-  // Serial.println(delta);
   bool ok = delta >= delay;
   if (ok) {
     g_previousMillis = millis();
