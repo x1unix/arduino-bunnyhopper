@@ -1,0 +1,58 @@
+body {
+  --color-background: #f0f0f0;
+  --color-text: #000;
+  --color-text-muted: #888;
+}
+
+@media(prefers-color-scheme: dark) {
+  body {
+    --color-background: #000;
+    --color-text: #dedede;
+    --color-text-muted: #888;
+  }
+}
+
+@keyframes keypress-highlight {
+  from {
+    background: var(--color-text-muted);
+  }
+
+  to {
+    background: transparent;
+  }
+}
+
+body {
+  font: 11pt monospace;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.container {
+  font: 11pt monospace;
+}
+
+.keystat {
+  margin: 0;
+  margin-bottom: .3rem;
+  text-align: center;
+}
+
+.keystat-units {
+  margin-left: 0;
+  color: var(--color-text-muted);
+}
+
+.keyname {
+  font-size: 2rem;
+  margin-bottom: 1.75rem;
+  padding: .3rem .7rem;
+  border-radius: .3rem;
+}
