@@ -29,6 +29,10 @@ Potentiometer can be enabled by defining pin number with `PIN_BHOP_INTERVAL_CTRL
 > In order for board to start, connect `PIN_KBD_JUMPER` pin to a ground.
 > Otherwise, board will boot into recovery mode.
 
+### Testing
+
+Keyboard speed and latency test tool is available here: https://x1unix.github.io/arduino-bunnyhopper/tester/
+
 ### Debugging
 
 Some boards can't be reprogrammed while they act as a USB keyboard.\
